@@ -1,0 +1,9 @@
+.dex-hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #22c55e;
+  }
+  
+  #dex-hover-frame {
+    background: #000;
+  }
