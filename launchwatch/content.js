@@ -1,6 +1,6 @@
 const regex = /\$(\w{2,})/g;
 const tokenCache = {};
-console.log("🔥 DexHover content script loaded");
+console.log("🔥 Ticker Hover content script loaded");
 
 async function getPairAddress(ticker) {
     if (tokenCache[ticker]) return tokenCache[ticker];
@@ -23,12 +23,12 @@ async function getPairAddress(ticker) {
   }
 
   const injectChart = (pairAddress, rect) => {
-    const existing = document.getElementById("dex-hover-popup");
+    const existing = document.getElementById("axiom-hover-popup");
     if (existing) existing.remove();
     if (!pairAddress) return;
   
     const popup = document.createElement("div");
-    popup.id = "dex-hover-popup";
+    popup.id = "axiom-hover-popup";
     popup.style.position = "absolute";
     popup.style.top = `${rect.bottom + window.scrollY + 6}px`;
     popup.style.left = `${rect.left}px`;
@@ -40,7 +40,7 @@ async function getPairAddress(ticker) {
     popup.style.zIndex = 9999;
     popup.style.fontSize = "14px";
     popup.style.fontFamily = "monospace";
-    popup.textContent = "Open in Dexscreener →";
+    popup.textContent = "Open in Axiom →";
     popup.style.cursor = "pointer";
   
     popup.onmouseenter = () => clearTimeout(popup.dismissTimer);
@@ -51,14 +51,14 @@ async function getPairAddress(ticker) {
     };
   
     popup.onclick = () => {
-      window.open(`https://dexscreener.com/solana/${pairAddress}`, "_blank");
+      window.open(`https://axiom.trade/meme/${pairAddress}`, "_blank");
     };
   
     document.body.appendChild(popup);
   };
   
   const cleanChart = () => {
-    const frame = document.getElementById("dex-hover-popup");
+    const frame = document.getElementById("axiom-hover-popup");
     if (frame) {
       frame.dismissTimer = setTimeout(() => frame.remove(), 300);
     }
