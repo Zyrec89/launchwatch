@@ -1,6 +1,6 @@
 # Launchwatch for X 🟢
 
-This Chrome extension lets you **hover over Solana memecoin tickers** on **X**, and instantly see a Dexscreener link popup.
+This Chrome extension lets you **hover over Solana memecoin tickers** on **X**, and instantly see an Axiom chart link popup.
 
 ---
 
@@ -35,8 +35,7 @@ This Chrome extension lets you **hover over Solana memecoin tickers** on **X**, 
 
 ## ⚠️ Notes
 - Only works with **Solana** tickers listed on Dexscreener
-- Dexscreener blocks iframe embeds, so the chart opens in a new tab
-- If popup is hard to click, it stays briefly on hover-out to help
+- stays briefly on hover-out
 
 ---
 
